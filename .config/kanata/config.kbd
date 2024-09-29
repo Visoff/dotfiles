@@ -1,0 +1,7 @@
+(defsrc
+    caps
+)
+
+(deflayer base
+  (tap-hold 10 10 esc lctrl)
+)

@@ -1,0 +1,33 @@
+{
+    "layer":"bottom",
+    "position":"top",
+    "height":12,
+    "spacing":4,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["pulseaudio", "custom/vl", "battery", "custom/vl", "clock"],
+    //"modules-center": ["sway/workspaces", "sway/window", "pulseaudio", "battery", "clock"],
+    "clock": {
+        "timezone": "Asia/Omsk",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d/%m/%Y}",
+        "format": "{:%H:%M}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}%"
+    },
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        }
+    },
+    "custom/vl": {
+        "format": "|"
+    }
+}
