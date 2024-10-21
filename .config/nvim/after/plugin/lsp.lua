@@ -9,6 +9,7 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>df", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "<leader>rf", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>fmt", function() vim.lsp.buf.format() end, opts)
 end)
 
 require('mason').setup({})

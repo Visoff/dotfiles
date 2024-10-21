@@ -5,16 +5,6 @@ return require('packer').startup(function(use)
     use 'preservim/nerdcommenter'
     use 'wbthomason/packer.nvim'
 
-    use {
-        "lervag/vimtex",
-        lazy = false,     -- we don't want to lazy load VimTeX
-        -- tag = "v2.15", -- uncomment to pin to a specific release
-        init = function()
-            -- VimTeX configuration goes here, e.g.
-            vim.g.vimtex_view_method = "zathura"
-        end
-    }
-
     use 'mbbill/undotree'
 
     use({

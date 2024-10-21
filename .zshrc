@@ -13,6 +13,7 @@ alias fzf='fzf --preview "bat --color=always {}"'
 alias copy="xclip -sel c"
 alias tmx="~/useful/tmux-sessionizer.sh"
 #alias air="$(go env GOPATH)/bin/air"
+alias neofetch="nerdfetch"
 
 export PATH="$(echo $PATH):$(go env GOPATH)/bin"
 

@@ -56,8 +56,8 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/ilya/bg/arch-black-4k.png fill
-# $(ls /home/ilya/bg | shuf -n 1) fill
+output * bg /home/ilya/bg/dark-cat.png fill
+#output * bg /home/ilya/bg/$(ls /home/ilya/bg | shuf -n 1) fill
 #
 # Example configuration:
 #
