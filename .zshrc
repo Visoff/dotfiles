@@ -11,9 +11,9 @@ alias pyenv=". /py/env/bin/activate"
 alias fzf='fzf --preview "bat --color=always {}"'
 #alias cat="bat --color=always"
 alias copy="xclip -sel c"
-alias tmx="~/useful/tmux-sessionizer.sh"
 #alias air="$(go env GOPATH)/bin/air"
 alias neofetch="nerdfetch"
+alias lsc="ls && clear"
 
 export PATH="$(echo $PATH):$(go env GOPATH)/bin"
 
