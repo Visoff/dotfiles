@@ -15,7 +15,9 @@ alias copy="xclip -sel c"
 alias neofetch="nerdfetch"
 alias lsc="ls && clear"
 
-export PATH="$(echo $PATH):$(go env GOPATH)/bin"
+export PATH="$(echo $PATH):$(go env GOPATH)/bin:/home/ilya/.ghcup/ghc/9.4.8/bin:"
+
+export JAVA_HOME=/usr/lib/jvm/default
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -122,3 +124,12 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/ilya/.opam/opam-init/init.zsh' ]] || source '/home/ilya/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration

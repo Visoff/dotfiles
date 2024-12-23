@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+    use 'echasnovski/mini.nvim'
     -- Packer can manage itself
     use 'preservim/nerdcommenter'
     use 'wbthomason/packer.nvim'
@@ -47,7 +48,12 @@ return require('packer').startup(function(use)
         "Exafunction/codeium.vim",
     }
 
-    use 'preservim/nerdtree'
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    })
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
