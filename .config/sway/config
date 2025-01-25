@@ -43,6 +43,15 @@ input type:keyboard {
     xkb_options grp:alt_shift_toggle
 }
 
+for_window [app_id="one.alynx.showmethekey" title="Floating Window - Show Me The Key"] {
+  floating enable
+  sticky enable
+}
+
+bindsym Mod4+t exec /home/ilya/.scripts/pomodoro.nvim.sh
+
+bindsym Mod4+tab exec /usr/bin/wofi-emoji
+
 bindsym Print exec grim - | wl-copy
 bindsym Shift+Print exec grim -g "$(slurp -d)" - | wl-copy
 

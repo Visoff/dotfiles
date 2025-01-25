@@ -14,6 +14,9 @@ alias copy="xclip -sel c"
 #alias air="$(go env GOPATH)/bin/air"
 alias neofetch="nerdfetch"
 alias lsc="ls && clear"
+alias cht.fzf="cht.sh \$(cht.sh :list | fzf --preview \"cht.sh {}\")"
+alias cht.nv="chat.fzf | nv -"
+alias cdfzf="cd \$(fd . -td | fzf --preview \"ls {}\")"
 
 export PATH="$(echo $PATH):$(go env GOPATH)/bin:/home/ilya/.ghcup/ghc/9.4.8/bin:"
 
@@ -122,6 +125,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source <(fzf --zsh)
+source ~/.zsh_tokens
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 

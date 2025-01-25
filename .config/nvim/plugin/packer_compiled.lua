@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/ilya/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/ilya/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["obsidian.nvim"] = {
     loaded = true,
     path = "/home/ilya/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
@@ -169,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ilya/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["pomodoro.nvim"] = {
+    loaded = true,
+    path = "/home/ilya/.local/share/nvim/site/pack/packer/start/pomodoro.nvim",
+    url = "https://github.com/Visoff/pomodoro.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

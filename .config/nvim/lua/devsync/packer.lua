@@ -26,6 +26,8 @@ return require('packer').startup(function(use)
 
     use 'norcalli/nvim-colorizer.lua'
 
+    use 'Visoff/pomodoro.nvim'
+
     -- Let's goooooo, harpoon gaming
     use 'nvim-lua/plenary.nvim'
     use {
@@ -50,6 +52,9 @@ return require('packer').startup(function(use)
 
     use({
         "stevearc/oil.nvim",
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
         config = function()
             require("oil").setup()
         end,

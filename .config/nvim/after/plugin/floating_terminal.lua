@@ -18,6 +18,7 @@ local open_floating_window = function(opts)
         row = math.floor((vim.o.lines - height) / 2),
         style = "minimal",
         border = "rounded",
+        title = "Terminal (" .. opts.n .. ")",
     })
 
     return {
@@ -27,24 +28,30 @@ local open_floating_window = function(opts)
 end
 
 local state = {
-    buf = -1,
+    bufs = {},
     win = -1,
 }
-local toggle_terminal = function()
+local toggle_terminal = function(n)
     if vim.api.nvim_win_is_valid(state.win) then
         vim.api.nvim_win_close(state.win, true)
     else
-        if vim.api.nvim_buf_is_valid(state.buf) then
-            state = open_floating_window({ buf = state.buf, win = state.win })
+        local s
+        if state.bufs[n] and vim.api.nvim_buf_is_valid(state.bufs[n]) then
+            s = open_floating_window({ buf = state.bufs[n], win = state.win, n = n })
         else
-            state = open_floating_window()
+            s = open_floating_window({ n = n })
         end
-        if vim.bo[state.buf].buftype ~= "terminal" then
+        state.bufs[n] = s.buf
+        state.win = s.win
+        if vim.bo[state.bufs[n]].buftype ~= "terminal" then
             vim.cmd.terminal()
         end
         vim.cmd.startinsert()
     end
 end
 
-vim.keymap.set({"n", "t"}, "<leader>tt", toggle_terminal)
+vim.keymap.set({"n", "t"}, "<leader>tt", function() toggle_terminal(1) end)
+vim.keymap.set({"n", "t"}, "<leader>t1", function() toggle_terminal(1) end)
+vim.keymap.set({"n", "t"}, "<leader>t2", function() toggle_terminal(2) end)
+vim.keymap.set({"n", "t"}, "<leader>t3", function() toggle_terminal(3) end)
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
