@@ -12,7 +12,7 @@ alias fzf='fzf --preview "bat --color=always {}"'
 #alias cat="bat --color=always"
 alias copy="xclip -sel c"
 #alias air="$(go env GOPATH)/bin/air"
-alias neofetch="nerdfetch"
+alias neofetch="pfetch"
 alias lsc="ls && clear"
 alias cht.fzf="cht.sh \$(cht.sh :list | fzf --preview \"cht.sh {}\")"
 alias cht.nv="chat.fzf | nv -"

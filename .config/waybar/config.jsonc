@@ -1,33 +1,52 @@
 {
-    "layer":"bottom",
-    "position":"top",
-    "height":12,
-    "spacing":4,
+    "layer": "bottom",
+    "position": "top",
+    "margin-top": 8,
+    "height": 12,
+    "spacing": 4,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "custom/vl", "battery", "custom/vl", "clock"],
-    //"modules-center": ["sway/workspaces", "sway/window", "pulseaudio", "battery", "clock"],
+    "modules-right": ["pulseaudio", "custom/vl", "battery", "custom/vl", "clock", "custom/vl", "network"],
+    
     "clock": {
         "timezone": "Asia/Omsk",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%d/%m/%Y}",
-        "format": "{:%H:%M}"
+        "format": "{:%H:%M}",
+        "interval": 1  // Ensures smooth time updates
     },
+    
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}%"
+        "format": "{icon}  {capacity}%",
+        "format-alt": "{time}",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 10  // More frequent battery updates
     },
+    
     "pulseaudio": {
-        "format": "{volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "",
         "format-icons": {
-            "default": ["", "", " "]
-        }
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "scroll-step": 5
     },
+    
     "custom/vl": {
-        "format": "|"
+        "format": "│",  // Better Unicode separator
+        "tooltip": false,
+        "interval": "once"  // No need to update
+    },
+    "network": {
+        "format-wifi": "   {essid}",
+        "format-disconnected": "⚠  Disconnected",
+        "interval": 5
     }
 }

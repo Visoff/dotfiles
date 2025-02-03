@@ -34,8 +34,8 @@ corner_radius 12
 default_border pixel 2
 default_floating_border pixel 2
 hide_edge_borders --i3 smart
-smart_borders on
-smart_gaps on
+smart_borders off
+smart_gaps off
 titlebar_border_thickness 0
 
 input type:keyboard {

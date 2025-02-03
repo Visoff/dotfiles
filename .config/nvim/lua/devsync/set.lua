@@ -11,3 +11,5 @@ vim.opt.smartindent = true
 vim.opt.scrolloff = 8
 
 vim.opt.conceallevel = 1
+
+vim.opt.cursorline = true

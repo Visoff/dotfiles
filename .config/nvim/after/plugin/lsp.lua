@@ -12,11 +12,36 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>fmt", function() vim.lsp.buf.format() end, opts)
 end)
 
+local lspconfig = require('lspconfig')
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {},
+  ensure_installed = {"denols", "ts_ls"},
   handlers = {
     lsp_zero.default_setup,
+    ["denols"] = function()
+        lspconfig.denols.setup({
+            init_options = {
+                enable = true,
+                lint = true,
+                unstable = true,
+                suggest = {
+                    imports = {
+                        hosts = {
+                            ["*"] = true,
+                        },
+                    },
+                }
+            },
+            root_dir = require'lspconfig'.util.root_pattern("deno.json", "deno.jsonc"),
+        })
+    end,
+    ["ts_ls"] = function ()
+        require('lspconfig').ts_ls.setup({
+            single_file_support = false,
+            root_dir = require'lspconfig'.util.root_pattern("package.json", "tsconfig.json"),
+        })
+    end
   },
 })
 
