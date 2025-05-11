@@ -1,29 +1,7 @@
 (defsrc
-         f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
-         ` 1 2 3 4 5 6 7 8 9 0 - =
-         q w e r t y u i o p [ ]
-    caps a s d f g h j k l ; '
-         z x c v b n m , . /
+    caps
 )
 
-(defalias
-    captap (tap-hold 100 100 esc lctrl)
-    dvk (layer-switch dvorak)
-    qwt (layer-switch qwerty)
-) 
-
-(deflayer qwerty
-            f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 @dvk
-            ` 1 2 3 4 5 6 7 8 9 0 - =
-            q w e r t y u i o p [ ]
-    @captap a s d f g h j k l ; '
-            z x c v b n m , . /
-)
-
-(deflayer dvorak
-            f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 @qwt
-            ` 1 2 3 4 5 6 7 8 9 0 [ ]
-            ' , . p y f g c r l / =
-    @captap a o e u i d h t n s -
-            ; q j k x b m w v z
+(deflayer base
+    (tap-hold 100 100 esc lctrl)
 )

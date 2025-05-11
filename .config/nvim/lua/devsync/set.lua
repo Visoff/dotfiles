@@ -8,6 +8,8 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+vim.opt.guicursor = ""
+
 vim.opt.scrolloff = 8
 
 vim.opt.conceallevel = 1

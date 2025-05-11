@@ -1,10 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
+# Some wayland stuff
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+export MOZ_ENABLE_WAYLAND=1  # For Firefox/Thunderbird
+export QT_QPA_PLATFORM=wayland
+
 alias ssh="TERM=xterm ssh"
 alias nv="nvim"
 alias vim="nv"
 alias nvd="nv ."
+alias v="nv"
 alias c="clear"
 alias pyenv=". /py/env/bin/activate"
 #alias l="ls"
@@ -12,13 +19,13 @@ alias fzf='fzf --preview "bat --color=always {}"'
 #alias cat="bat --color=always"
 alias copy="xclip -sel c"
 #alias air="$(go env GOPATH)/bin/air"
-alias neofetch="pfetch"
 alias lsc="ls && clear"
+alias cls="clear && ls"
 alias cht.fzf="cht.sh \$(cht.sh :list | fzf --preview \"cht.sh {}\")"
 alias cht.nv="chat.fzf | nv -"
 alias cdfzf="cd \$(fd . -td | fzf --preview \"ls {}\")"
 
-export PATH="$(echo $PATH):$(go env GOPATH)/bin:/home/ilya/.ghcup/ghc/9.4.8/bin:"
+export PATH="$(echo $PATH):$(go env GOPATH)/bin:/home/ilya/.ghcup/ghc/9.4.8/bin:${HOME}/.cargo/bin"
 
 export JAVA_HOME=/usr/lib/jvm/default
 

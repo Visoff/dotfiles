@@ -6,7 +6,7 @@
     "spacing": 4,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "custom/vl", "battery", "custom/vl", "clock", "custom/vl", "network"],
+    "modules-right": ["pulseaudio", "custom/vl", "battery", "custom/vl", "custom/cpu-governor", "custom/vl", "clock", "custom/vl", "network"],
     
     "clock": {
         "timezone": "Asia/Omsk",
@@ -48,5 +48,13 @@
         "format-wifi": "   {essid}",
         "format-disconnected": "⚠  Disconnected",
         "interval": 5
+    },
+
+    "custom/cpu-governor": {
+        "exec": "~/.config/waybar/scripts/cpu-governor-status.sh",
+        "interval": 5,  // Update every 5 seconds
+        "format": "{}",
+        "on-click": "~/.config/waybar/scripts/cpu-governor-toggle.sh",
+        "tooltip": false
     }
 }

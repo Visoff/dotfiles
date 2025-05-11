@@ -1,3 +1,4 @@
+--[[
 require("obsidian").setup({
     workspaces = {
         {
@@ -17,3 +18,4 @@ require("obsidian").setup({
         },
     }
 });
+]]

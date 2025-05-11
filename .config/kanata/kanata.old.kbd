@@ -1,0 +1,19 @@
+(defsrc
+    caps
+    f j
+    d k
+    s l
+)
+
+(deflayer base
+    (tap-hold 100 100 esc lctrl)
+
+    (tap-hold 100 100 f lmet)
+    (tap-hold 100 100 j rmet)
+
+    (tap-hold 100 100 d lalt)
+    (tap-hold 100 100 k ralt)
+
+    (tap-hold 100 100 s lsft)
+    (tap-hold 100 100 l rsft)
+)
