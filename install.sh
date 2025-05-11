@@ -43,5 +43,5 @@ source ./colorscheme/current.sh
 echo "Running install scripts"
 for pkg in ${config_pkgs[@]}; do
 	echo "configuring $(basename $pkg)"
-	sh -c "cd \"$pkg\" && ./install.sh"
+	sh -c "cd \"$pkg\" && sudo chmod +x install.sh && ./install.sh"
 done
