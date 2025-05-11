@@ -1,0 +1,60 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "margin-top": 8,
+    "height": 12,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["pulseaudio", "custom/vl", "battery", "custom/vl", "custom/cpu-governor", "custom/vl", "clock", "custom/vl", "network"],
+    
+    "clock": {
+        "timezone": "Asia/Omsk",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d/%m/%Y}",
+        "format": "{:%H:%M}",
+        "interval": 1  // Ensures smooth time updates
+    },
+    
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-alt": "{time}",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 10  // More frequent battery updates
+    },
+    
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+        "scroll-step": 5
+    },
+    
+    "custom/vl": {
+        "format": "│",  // Better Unicode separator
+        "tooltip": false,
+        "interval": "once"  // No need to update
+    },
+    "network": {
+        "format-wifi": "   {essid}",
+        "format-disconnected": "⚠  Disconnected",
+        "interval": 5
+    },
+
+    "custom/cpu-governor": {
+        "exec": "~/.config/waybar/scripts/cpu-governor-status.sh",
+        "interval": 5,  // Update every 5 seconds
+        "format": "{}",
+        "on-click": "~/.config/waybar/scripts/cpu-governor-toggle.sh",
+        "tooltip": false
+    }
+}

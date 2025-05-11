@@ -1,0 +1,55 @@
+@import "colors.css";
+
+* {
+    color: @text;
+    font-size: 14px;
+}
+
+#waybar {
+    margin: 0 2rem;
+    background: transparent;
+}
+
+#waybar > * {padding: 0 16px 8px 16px;}
+
+#window,
+#workspaces {
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+#workspaces button {
+    padding: 0;
+    margin-left: 4px;
+
+    border: 1px solid @base;
+    border-radius: 4px;
+}
+#workspaces button:first-child {
+    margin-left: 0;
+}
+
+#workspaces button.focused {
+    background: @surface2;
+    border-bottom: 1px solid @sky;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @crust;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.modules-left > * > *,
+.modules-center > * > *,
+.modules-right > * > * {
+    margin-left: 16px;
+}
+
+.modules-left > * > *:first-child,
+.modules-right > * > *:first-child,
+.modules-center > * > *:first-child {
+    margin-left: 0;
+}

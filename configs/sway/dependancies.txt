@@ -1,0 +1,1 @@
+swayfx swaylock swaybg swaync kitty
